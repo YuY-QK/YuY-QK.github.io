@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Blog, YuY">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="官网：https://square.github.io/retrofit/ 简介：  Retrofit，一个RESTful( 无状态 )的HTTP网络请求框架（基于OkHttp）( 封装 ) 注解配置网络请求参数，解耦彻底，扩展性强  示例：  集成 12345//build.gradle 引入implementation &amp;apos;com.squareup.retrofit2:retrofit">
+<meta property="og:type" content="article">
+<meta property="og:title" content="总结：Retrofit的使用">
+<meta property="og:url" content="https://YuY-QK.github.io/2019/09/29/总结：Retrofit的使用/index.html">
+<meta property="og:site_name" content="YuBlog">
+<meta property="og:description" content="官网：https://square.github.io/retrofit/ 简介：  Retrofit，一个RESTful( 无状态 )的HTTP网络请求框架（基于OkHttp）( 封装 ) 注解配置网络请求参数，解耦彻底，扩展性强  示例：  集成 12345//build.gradle 引入implementation &amp;apos;com.squareup.retrofit2:retrofit">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/3330855-d96807c8da9ad165.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/3330855-ac263728e5a387cf.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/3330855-639e8e2a0a805b27.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/3330855-547e2a740ef9293d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2019-09-29T15:12:41.287Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="总结：Retrofit的使用">
+<meta name="twitter:description" content="官网：https://square.github.io/retrofit/ 简介：  Retrofit，一个RESTful( 无状态 )的HTTP网络请求框架（基于OkHttp）( 封装 ) 注解配置网络请求参数，解耦彻底，扩展性强  示例：  集成 12345//build.gradle 引入implementation &amp;apos;com.squareup.retrofit2:retrofit">
+<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/3330855-d96807c8da9ad165.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://YuY-QK.github.io/2019/09/29/总结：Retrofit的使用/">
+
+
+
+
+
+  <title>总结：Retrofit的使用 | YuBlog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta custom-logo">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">YuBlog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">龙行天下，傲世乾坤</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://YuY-QK.github.io/2019/09/29/总结：Retrofit的使用/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Yu">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="YuBlog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">总结：Retrofit的使用</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-09-29T23:12:07+08:00">
+                2019-09-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><strong>官网</strong>：<a href="https://square.github.io/retrofit/" target="_blank" rel="noopener">https://square.github.io/retrofit/</a></p>
+<p><strong>简介：</strong></p>
+<ul>
+<li>Retrofit，一个<a href="[https://www.jianshu.com/p/91600da4df95](https://www.jianshu.com/p/91600da4df95)">RESTful</a>( <em>无状态</em> )的HTTP网络请求框架（基于<a href="[https://square.github.io/okhttp/](https://square.github.io/okhttp/)">OkHttp</a>）( <em>封装</em> )</li>
+<li>注解配置网络请求参数，解耦彻底，扩展性强<br><img src="https://upload-images.jianshu.io/upload_images/3330855-d96807c8da9ad165.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="交互示意图"></li>
+</ul>
+<p><strong>示例</strong>：</p>
+<ul>
+<li><p>集成</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">//build.gradle 引入</span><br><span class="line">implementation &apos;com.squareup.retrofit2:retrofit:(insert latest version)&apos;</span><br><span class="line"></span><br><span class="line">//AndroidManifest.xml 中添加权限</span><br><span class="line">&lt;uses-permission android:name=&quot;android.permission.INTERNET&quot;/&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>使用</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">//① 创建Java接口</span><br><span class="line">public interface GitHubService &#123;</span><br><span class="line">  @GET(&quot;users/&#123;user&#125;/repos&quot;)</span><br><span class="line">  Call&lt;List&lt;Repo&gt;&gt; listRepos(@Path(&quot;user&quot;) String user);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//② Retrofit实现创建的Java接口</span><br><span class="line">Retrofit retrofit = new Retrofit.Builder()</span><br><span class="line">    .baseUrl(&quot;https://api.github.com/&quot;)</span><br><span class="line">    .addConverterFactory(GsonConverterFactory.create()) // 设置数据解析器</span><br><span class="line">    .addCallAdapterFactory(RxJavaCallAdapterFactory.create()) // 支持RxJava平台</span><br><span class="line">    .build();</span><br><span class="line"></span><br><span class="line">GitHubService service = retrofit.create(GitHubService.class);</span><br><span class="line"></span><br><span class="line">//③调用（同步或异步）</span><br><span class="line">Call&lt;List&lt;Repo&gt;&gt; repos = service.listRepos(&quot;octocat&quot;);</span><br><span class="line"></span><br><span class="line">call.enqueue(new Callback&lt;ResponseBody&gt;() &#123;</span><br><span class="line">    @Override</span><br><span class="line">    public void onResponse(Call&lt;ResponseBody&gt; call, Response&lt;ResponseBody&gt; response) &#123;</span><br><span class="line">        try &#123;</span><br><span class="line">            System.out.println(response.body().string());</span><br><span class="line">        &#125; catch (IOException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    public void onFailure(Call&lt;ResponseBody&gt; call, Throwable t) &#123;</span><br><span class="line">        t.printStackTrace();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<p>#####注意：</p>
+<ul>
+<li>1、Retrofit的Url组合规则<br><code>Retrofit2</code> 的 <code>baseUlr</code> 必须以 <code>/</code>（斜线） 结束，不然会抛出一个 <code>IllegalArgumentException</code>。<br>所以如果看到别的教程没有以 <code>/</code> 结束，那么多半是直接从 <code>Retrofit 1.X</code> 照搬过来的。</li>
+</ul>
+<p>#一、Retrofit注解<br><img src="https://upload-images.jianshu.io/upload_images/3330855-ac263728e5a387cf.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Retrofit注解"></p>
+<p>####1、@HTTP </p>
+<ul>
+<li><p>有三个属性：<code>method</code>、<code>path</code>、 <code>hasBody</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * method 表示请求的方法，区分大小写</span><br><span class="line"> * path表示路径</span><br><span class="line"> * hasBody表示是否有请求体</span><br><span class="line"> */</span><br><span class="line">@HTTP(method = &quot;GET&quot;, path = &quot;blog/&#123;id&#125;&quot;, hasBody = false)</span><br><span class="line">Call&lt;ResponseBody&gt; getBlog(@Path(&quot;id&quot;) int id);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>注：</strong> <code>method</code> 的值 <code>retrofit</code> 不会做处理，所以要自行保证其准确性，</p>
+</li>
+</ul>
+<p>####2、@Path<br><img src="https://upload-images.jianshu.io/upload_images/3330855-639e8e2a0a805b27.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="path注解说明"></p>
+<p>####3、@Header &amp; @Headers</p>
+<ul>
+<li>添加请求头 &amp;添加不固定的请求头<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">// @Header</span><br><span class="line">@GET(&quot;user&quot;)</span><br><span class="line">Call&lt;User&gt; getUser(@Header(&quot;Authorization&quot;) String authorization)</span><br><span class="line"></span><br><span class="line">// @Headers</span><br><span class="line">@Headers(&quot;Authorization: authorization&quot;)</span><br><span class="line">@GET(&quot;user&quot;)</span><br><span class="line">Call&lt;User&gt; getUser()</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<p><strong>说明：</strong><br>以上的效果是一致的。</p>
+<ul>
+<li>区别在于使用场景和使用方式<ul>
+<li><ol>
+<li>使用场景：@Header用于添加不固定的请求头，@Headers用于添加固定的请求头</li>
+</ol>
+<ul>
+<li><ol start="2">
+<li>使用方式：@Header作用于方法的参数；@Headers作用于方法</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>####4、@Body</p>
+<ul>
+<li><code>@Body</code> 的参数如果是一个<code>Map</code> ，则作用相当于<code>@Field</code><br>不过Map要经过 FormBody.Builder 类处理成为符合 Okhttp 格式的表单，如：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">FormBody.Builder builder = new FormBody.Builder();</span><br><span class="line">builder.add(&quot;key&quot;,&quot;value&quot;);</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<p>####5、@Field &amp; @FieldMap；@Part &amp; @PartMap</p>
+<ul>
+<li><code>@Field</code> 与 <code>@FieldMap</code> 配合使用，在发送 <code>Post</code> 请求时提交请求的表单字段</li>
+<li><code>@Part</code>与 <code>@Field</code> 的区别：功能相同，但携带的参数类型更加丰富，包括数据流，所以适用于 <strong>有文件上传</strong> 的场景</li>
+</ul>
+<p>####6、@Query和@QueryMap</p>
+<ul>
+<li>用于 @GET 方法的查询参数（Query 相当于 Url 中 ‘?’ 后面的 key-value）</li>
+</ul>
+<p>#二、Converter</p>
+<ul>
+<li>1、Retrofit支持多种数据解析方式<br><img src="https://upload-images.jianshu.io/upload_images/3330855-547e2a740ef9293d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="解析器"></li>
+</ul>
+<p><strong>注：</strong>以上版本可能不是<a href="https://github.com/square/retrofit/tree/master/retrofit-converters" target="_blank" rel="noopener">最新版本</a></p>
+<ul>
+<li><p>2、说明：</p>
+<ul>
+<li><code>Convert.Factoy</code> 的具体作用就是获取一个 <code>Convert</code></li>
+<li><code>Converter</code> 是对于 <code>Call&lt;T&gt;</code> 中 <code>T</code> 的转换</li>
+<li><code>addConverterFactory</code> 是有先后顺序的，如果有多个 <code>ConverterFactory</code> 都支持同一种类型，那么就是只有第一个才会被使用，而 <code>GsonConverterFactory</code> 是不判断是否支持的，所以这里交换了顺序还会有一个异常抛出，原因是类型不匹配。</li>
+</ul>
+</li>
+<li><p>3、使用：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Retrofit retrofit = new Retrofit.Builder()</span><br><span class="line">      .baseUrl(&quot;http://localhost:4567/&quot;)</span><br><span class="line">      // 我们自定义的一定要放在Gson这类的Converter前面 </span><br><span class="line">      .addConverterFactory(StringConverterFactory.create())</span><br><span class="line">      .addConverterFactory(GsonConverterFactory.create())</span><br><span class="line">      .build();</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>4、<code>Converter</code> 源码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">public interface Converter&lt;F, T&gt; &#123;</span><br><span class="line">  // 实现从 F(rom) 到 T(o)的转换</span><br><span class="line">  T convert(F value) throws IOException;</span><br><span class="line"></span><br><span class="line">  // 用于向Retrofit提供相应Converter的工厂</span><br><span class="line">  abstract class Factory &#123;</span><br><span class="line">    // 这里创建从ResponseBody其它类型的Converter，如果不能处理返回null</span><br><span class="line">    // 主要用于对响应体的处理</span><br><span class="line">    public Converter&lt;ResponseBody, ?&gt; responseBodyConverter(Type type, Annotation[] annotations,</span><br><span class="line">    Retrofit retrofit) &#123;</span><br><span class="line">      return null;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    // 在这里创建 从自定类型到ResponseBody 的Converter,不能处理就返回null，</span><br><span class="line">    // 主要用于对Part、PartMap、Body注解的处理</span><br><span class="line">    public Converter&lt;?, RequestBody&gt; requestBodyConverter(Type type,</span><br><span class="line">    Annotation[] parameterAnnotations, Annotation[] methodAnnotations, Retrofit retrofit) &#123;</span><br><span class="line">      return null;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    // 这里用于对Field、FieldMap、Header、Path、Query、QueryMap注解的处理</span><br><span class="line">    // Retrfofit对于上面的几个注解默认使用的是调用toString方法</span><br><span class="line">    public Converter&lt;?, String&gt; stringConverter(Type type, Annotation[] annotations,</span><br><span class="line">    Retrofit retrofit) &#123;</span><br><span class="line">      return null;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>5、定义Gson的Converter</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line">import com.google.gson.Gson;</span><br><span class="line">import com.google.gson.TypeAdapter;</span><br><span class="line">import com.google.gson.reflect.TypeToken;</span><br><span class="line"></span><br><span class="line">import java.lang.annotation.Annotation;</span><br><span class="line">import java.lang.reflect.Type;</span><br><span class="line"></span><br><span class="line">import okhttp3.RequestBody;</span><br><span class="line">import okhttp3.ResponseBody;</span><br><span class="line">import retrofit2.Converter;</span><br><span class="line">import retrofit2.Retrofit;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">public final class GsonConverterFactory extends Converter.Factory &#123;</span><br><span class="line">    /**</span><br><span class="line">     * Create an instance using a default &#123;@link Gson&#125; instance for conversion. Encoding to JSON and</span><br><span class="line">     * decoding from JSON (when no charset is specified by a header) will use UTF-8.</span><br><span class="line">     */</span><br><span class="line">    public static GsonConverterFactory create() &#123;</span><br><span class="line">        return create(new Gson());</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * Create an instance using &#123;@code gson&#125; for conversion. Encoding to JSON and</span><br><span class="line">     * decoding from JSON (when no charset is specified by a header) will use UTF-8.</span><br><span class="line">     */</span><br><span class="line">    public static GsonConverterFactory create(Gson gson) &#123;</span><br><span class="line">        return new GsonConverterFactory(gson);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    private final Gson gson;</span><br><span class="line"></span><br><span class="line">    private GsonConverterFactory(Gson gson) &#123;</span><br><span class="line">        if (gson == null) throw new NullPointerException(&quot;gson == null&quot;);</span><br><span class="line">        this.gson = gson;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    //对ResponseBody进行数据转换的转换器</span><br><span class="line">    @Override</span><br><span class="line">    public Converter&lt;ResponseBody, ?&gt; responseBodyConverter(Type type, Annotation[] annotations,</span><br><span class="line">                                                            Retrofit retrofit) &#123;</span><br><span class="line">        TypeAdapter&lt;?&gt; adapter = gson.getAdapter(TypeToken.get(type));</span><br><span class="line">        return new GsonResponseBodyConverter&lt;&gt;(gson, adapter);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    //将未知数据转换成RequestBody的转换器</span><br><span class="line">    @Override</span><br><span class="line">    public Converter&lt;?, RequestBody&gt; requestBodyConverter(Type type,</span><br><span class="line">                                                          Annotation[] parameterAnnotations, Annotation[] methodAnnotations, Retrofit retrofit) &#123;</span><br><span class="line">        TypeAdapter&lt;?&gt; adapter = gson.getAdapter(TypeToken.get(type));</span><br><span class="line">        return new GsonRequestBodyConverter&lt;&gt;(gson, adapter);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">/*</span><br><span class="line">//Converter.Factory中的方法</span><br><span class="line">    //将未知数据转换成String类型的数据转换器</span><br><span class="line">    public @Nullable Converter&lt;?, String&gt; stringConverter(Type type, Annotation[] annotations,</span><br><span class="line">        Retrofit retrofit) &#123;</span><br><span class="line">      return null;</span><br><span class="line">    &#125;</span><br><span class="line">*/</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<p>#三、CallAdapter</p>
+<ul>
+<li>1、说明：<ul>
+<li><code>CallAdapter</code> 则可以对 <code>Call</code> 转换，这样的话 <code>Call&lt;T&gt;</code> 中的 <code>Call</code> 也是可以被替换的。</li>
+<li><code>addCallAdapterFactory</code> 与 <code>addConverterFactory</code> 同理，也有先后顺序。</li>
+</ul>
+</li>
+<li>2、使用：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">//引入RxJava2支持:</span><br><span class="line">compile &apos;com.squareup.retrofit2:adapter-rxjava:2.6.1&apos;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<p><strong>注：</strong>以上版本可能不是<a href="https://github.com/square/retrofit/tree/master/retrofit-adapters" target="_blank" rel="noopener">最新版本</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">//通过RxJavaCallAdapterFactory为Retrofit添加RxJava支持：</span><br><span class="line">Retrofit retrofit = new Retrofit.Builder()</span><br><span class="line">      .baseUrl(&quot;http://localhost:4567/&quot;)</span><br><span class="line">      .addConverterFactory(GsonConverterFactory.create())</span><br><span class="line">      .addCallAdapterFactory(RxJavaCallAdapterFactory.create())</span><br><span class="line">      // 针对rxjava2.x</span><br><span class="line">      .addCallAdapterFactory(RxJava2CallAdapterFactory.create()) </span><br><span class="line">      .build();</span><br><span class="line"></span><br><span class="line">//接口设计</span><br><span class="line">public interface BlogService &#123;</span><br><span class="line">  @POST(&quot;/blog&quot;)</span><br><span class="line">  Observable&lt;Result&lt;List&lt;Blog&gt;&gt;&gt; getBlogs();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//使用：</span><br><span class="line">BlogService service = retrofit.create(BlogService.class);</span><br><span class="line">service.getBlogs(1)</span><br><span class="line">  .subscribeOn(Schedulers.io())</span><br><span class="line">  .subscribe(new Subscriber&lt;Result&lt;List&lt;Blog&gt;&gt;&gt;() &#123;</span><br><span class="line">      @Override</span><br><span class="line">      public void onCompleted() &#123;</span><br><span class="line">        System.out.println(&quot;onCompleted&quot;);</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      @Override</span><br><span class="line">      public void onError(Throwable e) &#123;</span><br><span class="line">        System.err.println(&quot;onError&quot;);</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      @Override</span><br><span class="line">      public void onNext(Result&lt;List&lt;Blog&gt;&gt; blogsResult) &#123;</span><br><span class="line">        System.out.println(blogsResult);</span><br><span class="line">      &#125;</span><br><span class="line">  &#125;);</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>3、CallAdapter源码：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">public interface CallAdapter&lt;T&gt; &#123;</span><br><span class="line"></span><br><span class="line">  // 直正数据的类型 如Call&lt;T&gt; 中的 T</span><br><span class="line">  // 这个 T 会作为Converter.Factory.responseBodyConverter 的第一个参数</span><br><span class="line">  // 可以参照上面的自定义Converter</span><br><span class="line">  Type responseType();</span><br><span class="line"></span><br><span class="line">  &lt;R&gt; T adapt(Call&lt;R&gt; call);</span><br><span class="line"></span><br><span class="line">  // 用于向Retrofit提供CallAdapter的工厂类</span><br><span class="line">  abstract class Factory &#123;</span><br><span class="line">    // 在这个方法中判断是否是我们支持的类型，returnType 即Call&lt;Requestbody&gt;和`Observable&lt;Requestbody&gt;`</span><br><span class="line">    // RxJavaCallAdapterFactory 就是判断returnType是不是Observable&lt;?&gt; 类型</span><br><span class="line">    // 不支持时返回null</span><br><span class="line">    public abstract CallAdapter&lt;?&gt; get(Type returnType, Annotation[] annotations,</span><br><span class="line">    Retrofit retrofit);</span><br><span class="line"></span><br><span class="line">    // 用于获取泛型的参数 如 Call&lt;Requestbody&gt; 中 Requestbody</span><br><span class="line">    protected static Type getParameterUpperBound(int index, ParameterizedType type) &#123;</span><br><span class="line">      return Utils.getParameterUpperBound(index, type);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    // 用于获取泛型的原始类型 如 Call&lt;Requestbody&gt; 中的 Call</span><br><span class="line">    // 上面的get方法需要使用该方法。</span><br><span class="line">    protected static Class&lt;?&gt; getRawType(Type type) &#123;</span><br><span class="line">      return Utils.getRawType(type);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<p>#四、相关链接：<br><a href="https://blog.csdn.net/carson_ho/article/details/73732076" target="_blank" rel="noopener">Retrofit 2.0 使用教程</a><br><a href="https://blog.csdn.net/qq_36699930/article/details/80564850" target="_blank" rel="noopener">Retrofit2详解</a><br><a href="https://www.jianshu.com/p/308f3c54abdd" target="_blank" rel="noopener">你真的会用Retrofit2吗?Retrofit2完全教程</a><br><a href="https://blog.csdn.net/chenkai19920410/article/details/51719425" target="_blank" rel="noopener">Retrofit2源码解析</a><br><a href="https://blog.csdn.net/chunqiuwei/article/details/82526077" target="_blank" rel="noopener">Retrofit之Converter简单解析</a></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/09/29/first/" rel="next" title="first">
+                <i class="fa fa-chevron-left"></i> first
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar.png" alt="Yu">
+            
+              <p class="site-author-name" itemprop="name">Yu</p>
+              <p class="site-description motion-element" itemprop="description">记录点滴</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Yu</span>
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/canvas_lines.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
