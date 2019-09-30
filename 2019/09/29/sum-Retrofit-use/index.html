@@ -124,12 +124,12 @@
 <meta name="description" content="官网：https://square.github.io/retrofit/ 简介：  Retrofit，一个RESTful( 无状态 )的HTTP网络请求框架（基于OkHttp）( 封装 ) 注解配置网络请求参数，解耦彻底，扩展性强  示例：  集成 12345//build.gradle 引入implementation &amp;apos;com.squareup.retrofit2:retrofit">
 <meta property="og:type" content="article">
 <meta property="og:title" content="总结：Retrofit的使用">
-<meta property="og:url" content="https://github.com/YuY-QK/YuY-QK.github.io/2019/09/29/sum-Retrofit-use/index.html">
+<meta property="og:url" content="https://YuY-QK.github.io/2019/09/29/sum-Retrofit-use/index.html">
 <meta property="og:site_name" content="YuBlog">
 <meta property="og:description" content="官网：https://square.github.io/retrofit/ 简介：  Retrofit，一个RESTful( 无状态 )的HTTP网络请求框架（基于OkHttp）( 封装 ) 注解配置网络请求参数，解耦彻底，扩展性强  示例：  集成 12345//build.gradle 引入implementation &amp;apos;com.squareup.retrofit2:retrofit">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/3330855-d96807c8da9ad165.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="https://github.com/YuY-QK/YuY-QK.github/retrofit_annotation.png">
+<meta property="og:image" content="https://yuy-qk.github.io/.io//retrofit_annotation.png">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/3330855-639e8e2a0a805b27.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/3330855-547e2a740ef9293d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:updated_time" content="2019-09-30T16:00:35.994Z">
@@ -166,7 +166,7 @@
 
 
 
-  <link rel="canonical" href="https://github.com/YuY-QK/YuY-QK.github.io/2019/09/29/sum-Retrofit-use/">
+  <link rel="canonical" href="https://YuY-QK.github.io/2019/09/29/sum-Retrofit-use/">
 
 
 
@@ -315,7 +315,7 @@ show_date_time();
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://github.com/YuY-QK/YuY-QK.github.io/2019/09/29/sum-Retrofit-use/">
+    <link itemprop="mainEntityOfPage" href="https://YuY-QK.github.io/2019/09/29/sum-Retrofit-use/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Yu">
@@ -423,7 +423,7 @@ show_date_time();
 <h5 id="注意："><a href="#注意：" class="headerlink" title="注意："></a>注意：</h5><ul>
 <li>1、Retrofit的Url组合规则<br><code>Retrofit2</code> 的 <code>baseUlr</code> 必须以 <code>/</code>（斜线） 结束，不然会抛出一个 <code>IllegalArgumentException</code>。<br>所以如果看到别的教程没有以 <code>/</code> 结束，那么多半是直接从 <code>Retrofit 1.X</code> 照搬过来的。</li>
 </ul>
-<h1 id="一、Retrofit注解"><a href="#一、Retrofit注解" class="headerlink" title="一、Retrofit注解"></a>一、Retrofit注解</h1><p><img src="/YuY-QK/YuY-QK.github/retrofit_annotation.png" alt="Retrofit注解"></p>
+<h1 id="一、Retrofit注解"><a href="#一、Retrofit注解" class="headerlink" title="一、Retrofit注解"></a>一、Retrofit注解</h1><p><img src="/.io//retrofit_annotation.png" alt="Retrofit注解"></p>
 <h4 id="1、-HTTP"><a href="#1、-HTTP" class="headerlink" title="1、@HTTP"></a>1、@HTTP</h4><ul>
 <li><p>有三个属性：<code>method</code>、<code>path</code>、 <code>hasBody</code></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * method 表示请求的方法，区分大小写</span><br><span class="line"> * path表示路径</span><br><span class="line"> * hasBody表示是否有请求体</span><br><span class="line"> */</span><br><span class="line">@HTTP(method = &quot;GET&quot;, path = &quot;blog/&#123;id&#125;&quot;, hasBody = false)</span><br><span class="line">Call&lt;ResponseBody&gt; getBlog(@Path(&quot;id&quot;) int id);</span><br></pre></td></tr></table></figure>
@@ -468,7 +468,7 @@ show_date_time();
 <h1 id="二、Converter"><a href="#二、Converter" class="headerlink" title="二、Converter"></a>二、Converter</h1><ul>
 <li>1、Retrofit支持多种数据解析方式<br><img src="https://upload-images.jianshu.io/upload_images/3330855-547e2a740ef9293d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="解析器"></li>
 </ul>
-<p><strong>注：</strong>以上版本可能不是<a href="https://github.com/square/retrofit/tree/master/retrofit-converters">最新版本</a></p>
+<p><strong>注：</strong>以上版本可能不是<a href="https://github.com/square/retrofit/tree/master/retrofit-converters" target="_blank" rel="noopener">最新版本</a></p>
 <ul>
 <li><p>2、说明：</p>
 <ul>
@@ -498,7 +498,7 @@ show_date_time();
 
 </li>
 </ul>
-<p><strong>注：</strong>以上版本可能不是<a href="https://github.com/square/retrofit/tree/master/retrofit-adapters">最新版本</a></p>
+<p><strong>注：</strong>以上版本可能不是<a href="https://github.com/square/retrofit/tree/master/retrofit-adapters" target="_blank" rel="noopener">最新版本</a></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">//通过RxJavaCallAdapterFactory为Retrofit添加RxJava支持：</span><br><span class="line">Retrofit retrofit = new Retrofit.Builder()</span><br><span class="line">      .baseUrl(&quot;http://localhost:4567/&quot;)</span><br><span class="line">      .addConverterFactory(GsonConverterFactory.create())</span><br><span class="line">      .addCallAdapterFactory(RxJavaCallAdapterFactory.create())</span><br><span class="line">      // 针对rxjava2.x</span><br><span class="line">      .addCallAdapterFactory(RxJava2CallAdapterFactory.create()) </span><br><span class="line">      .build();</span><br><span class="line"></span><br><span class="line">//接口设计</span><br><span class="line">public interface BlogService &#123;</span><br><span class="line">  @POST(&quot;/blog&quot;)</span><br><span class="line">  Observable&lt;Result&lt;List&lt;Blog&gt;&gt;&gt; getBlogs();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//使用：</span><br><span class="line">BlogService service = retrofit.create(BlogService.class);</span><br><span class="line">service.getBlogs(1)</span><br><span class="line">  .subscribeOn(Schedulers.io())</span><br><span class="line">  .subscribe(new Subscriber&lt;Result&lt;List&lt;Blog&gt;&gt;&gt;() &#123;</span><br><span class="line">      @Override</span><br><span class="line">      public void onCompleted() &#123;</span><br><span class="line">        System.out.println(&quot;onCompleted&quot;);</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      @Override</span><br><span class="line">      public void onError(Throwable e) &#123;</span><br><span class="line">        System.err.println(&quot;onError&quot;);</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      @Override</span><br><span class="line">      public void onNext(Result&lt;List&lt;Blog&gt;&gt; blogsResult) &#123;</span><br><span class="line">        System.out.println(blogsResult);</span><br><span class="line">      &#125;</span><br><span class="line">  &#125;);</span><br></pre></td></tr></table></figure>
 
 <ul>
