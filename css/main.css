@@ -1823,7 +1823,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #0bff54;
+  background: #fb3701;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3127,7 +3127,7 @@ pre .javascript .function {
 }
 @media screen and (min-width: 1200px) {
   body {
-    background-image: url("/images/bg.jpg");
+    background-image: url("/YuY-QK.github.io/images/bg.jpg");
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: 50% 50%;
@@ -3168,6 +3168,14 @@ pre .javascript .function {
   color: #fff;
   background: var(--base_color);
 }
+.post-button .btn {
+  user-select: none;
+  border: none;
+}
+.post-button.text-center {
+  text-align: right;
+  margin-top: 20px;
+}
 .posts-expand .post-title-link::before {
   content: "";
   position: absolute;
@@ -3205,6 +3213,9 @@ pre .javascript .function {
   -webkit-animation: hue 5s infinite linear;
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
+}
+.post-title-link::selection {
+  background: #eef0f4;
 }
 .site-subtitle {
   margin: 10px;
