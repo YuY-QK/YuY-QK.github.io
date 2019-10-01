@@ -1823,7 +1823,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #59a7ff;
+  background: #4ffff5;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3125,9 +3125,6 @@ pre .javascript .function {
   --light_color: #3eea3e;
   --strong_color: #fd774e;
 }
-img.img-topic {
-  width: 100%;
-}
 @media screen and (min-width: 1200px) {
   body {
     background-image: url("/images/bg.jpg");
@@ -3139,6 +3136,12 @@ img.img-topic {
   #footer a {
     color: #eee;
   }
+}
+img {
+  border: none;
+}
+img.img-topic {
+  width: 100%;
 }
 .pace .pace-progress {
   background: var(--light_color); /*进度条颜色*/
