@@ -1823,7 +1823,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ffbdff;
+  background: #9d71ff;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3340,14 +3340,20 @@ h6 {
 .menu .menu-item .fa {
   color: var(--base_color);
 }
+.menu .menu-item a {
+  border-bottom: none !important;
+}
 .menu .menu-item-active a {
   color: var(--base_color);
   background-color: var(--style_light) !important;
 }
-.menu .menu-item-active a::hover .menu-item {
-  color: #fff;
+.menu .menu-item a::hover {
+  color: #fff !important;
   background-color: var(--base_color) !important;
-  border-bottom: none;
+}
+.menu .menu-item a::selection {
+  color: var(--base_color) !important;
+  background-color: transparent;
 }
 .menu .menu-item-active a::after {
   background-color: var(--base_color);

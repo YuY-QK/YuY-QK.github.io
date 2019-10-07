@@ -131,7 +131,7 @@
 <meta property="og:image" content="https://yuy-qk.github.io/2019/09/29/sum-Retrofit-use/retrofit_2.png">
 <meta property="og:image" content="https://yuy-qk.github.io/2019/09/29/sum-Retrofit-use/retrofit_3.png">
 <meta property="og:image" content="https://yuy-qk.github.io/2019/09/29/sum-Retrofit-use/retrofit_4.png">
-<meta property="og:updated_time" content="2019-10-01T13:55:56.660Z">
+<meta property="og:updated_time" content="2019-10-07T07:09:07.042Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="总结：Retrofit的使用">
 <meta name="twitter:image" content="https://yuy-qk.github.io/2019/09/29/sum-Retrofit-use/retrofit.png">
@@ -422,19 +422,20 @@ show_date_time();
 
 </li>
 </ul>
-<h5 id="注意："><a href="#注意：" class="headerlink" title="注意："></a>注意：</h5><ul>
+<p><strong>注意：</strong></p>
+<ul>
 <li>1、Retrofit的Url组合规则<br><code>Retrofit2</code> 的 <code>baseUlr</code> 必须以 <code>/</code>（斜线） 结束，不然会抛出一个 <code>IllegalArgumentException</code>。<br>所以如果看到别的教程没有以 <code>/</code> 结束，那么多半是直接从 <code>Retrofit 1.X</code> 照搬过来的。</li>
 </ul>
 <h1 id="一、Retrofit注解"><a href="#一、Retrofit注解" class="headerlink" title="一、Retrofit注解"></a>一、Retrofit注解</h1><p><img src="//YuY-QK.github.io/2019/09/29/sum-Retrofit-use/retrofit_2.png" alt="Retrofit注解"></p>
-<h4 id="1、-HTTP"><a href="#1、-HTTP" class="headerlink" title="1、@HTTP"></a>1、@HTTP</h4><ul>
+<h2 id="1、-HTTP"><a href="#1、-HTTP" class="headerlink" title="1、@HTTP"></a>1、@HTTP</h2><ul>
 <li><p>有三个属性：<code>method</code>、<code>path</code>、 <code>hasBody</code></p>
 <figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * method 表示请求的方法，区分大小写</span></span><br><span class="line"><span class="comment"> * path表示路径</span></span><br><span class="line"><span class="comment"> * hasBody表示是否有请求体</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="variable">@HTTP</span>(method = <span class="string">"GET"</span>, path = <span class="string">"blog/&#123;id&#125;"</span>, hasBody = false)</span><br><span class="line">Call&lt;ResponseBody&gt; getBlog(<span class="variable">@Path</span>(<span class="string">"id"</span>) int id);</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><strong>注：</strong> <code>method</code> 的值 <code>retrofit</code> 不会做处理，所以要自行保证其准确性，</p>
 </li>
 </ul>
-<h4 id="2、-Path"><a href="#2、-Path" class="headerlink" title="2、@Path"></a>2、@Path</h4><p><img src="//YuY-QK.github.io/2019/09/29/sum-Retrofit-use/retrofit_3.png" alt="path注解说明"></p>
-<h4 id="3、-Header-amp-Headers"><a href="#3、-Header-amp-Headers" class="headerlink" title="3、@Header &amp; @Headers"></a>3、@Header &amp; @Headers</h4><ul>
+<h2 id="2、-Path"><a href="#2、-Path" class="headerlink" title="2、@Path"></a>2、@Path</h2><p><img src="//YuY-QK.github.io/2019/09/29/sum-Retrofit-use/retrofit_3.png" alt="path注解说明"></p>
+<h2 id="3、-Header-amp-Headers"><a href="#3、-Header-amp-Headers" class="headerlink" title="3、@Header &amp; @Headers"></a>3、@Header &amp; @Headers</h2><ul>
 <li>添加请求头 &amp;添加不固定的请求头<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// @Header</span></span><br><span class="line"><span class="variable">@GET</span>(<span class="string">"user"</span>)</span><br><span class="line">Call&lt;User&gt; getUser(<span class="variable">@Header</span>(<span class="string">"Authorization"</span>) String authorization)</span><br><span class="line"></span><br><span class="line"><span class="comment">// @Headers</span></span><br><span class="line"><span class="variable">@Headers</span>(<span class="string">"Authorization: authorization"</span>)</span><br><span class="line"><span class="variable">@GET</span>(<span class="string">"user"</span>)</span><br><span class="line">Call&lt;User&gt; getUser()</span><br></pre></td></tr></table></figure>
 
 </li>
@@ -455,22 +456,22 @@ show_date_time();
 </ul>
 </li>
 </ul>
-<h4 id="4、-Body"><a href="#4、-Body" class="headerlink" title="4、@Body"></a>4、@Body</h4><ul>
+<h2 id="4、-Body"><a href="#4、-Body" class="headerlink" title="4、@Body"></a>4、@Body</h2><ul>
 <li><code>@Body</code> 的参数如果是一个<code>Map</code> ，则作用相当于<code>@Field</code><br>不过Map要经过 FormBody.Builder 类处理成为符合 Okhttp 格式的表单，如：<figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">FormBody.Builder builder = <span class="keyword">new</span> FormBody.Builder();</span><br><span class="line">builder.<span class="keyword">add</span>(<span class="string">"key"</span>,<span class="string">"value"</span>);</span><br></pre></td></tr></table></figure>
 
 </li>
 </ul>
-<h4 id="5、-Field-amp-FieldMap；-Part-amp-PartMap"><a href="#5、-Field-amp-FieldMap；-Part-amp-PartMap" class="headerlink" title="5、@Field &amp; @FieldMap；@Part &amp; @PartMap"></a>5、@Field &amp; @FieldMap；@Part &amp; @PartMap</h4><ul>
+<h2 id="5、-Field-amp-FieldMap；-Part-amp-PartMap"><a href="#5、-Field-amp-FieldMap；-Part-amp-PartMap" class="headerlink" title="5、@Field &amp; @FieldMap；@Part &amp; @PartMap"></a>5、@Field &amp; @FieldMap；@Part &amp; @PartMap</h2><ul>
 <li><code>@Field</code> 与 <code>@FieldMap</code> 配合使用，在发送 <code>Post</code> 请求时提交请求的表单字段</li>
 <li><code>@Part</code>与 <code>@Field</code> 的区别：功能相同，但携带的参数类型更加丰富，包括数据流，所以适用于 <strong>有文件上传</strong> 的场景</li>
 </ul>
-<h4 id="6、-Query和-QueryMap"><a href="#6、-Query和-QueryMap" class="headerlink" title="6、@Query和@QueryMap"></a>6、@Query和@QueryMap</h4><ul>
+<h2 id="6、-Query和-QueryMap"><a href="#6、-Query和-QueryMap" class="headerlink" title="6、@Query和@QueryMap"></a>6、@Query和@QueryMap</h2><ul>
 <li>用于 @GET 方法的查询参数（Query 相当于 Url 中 ‘?’ 后面的 key-value）</li>
 </ul>
 <h1 id="二、Converter"><a href="#二、Converter" class="headerlink" title="二、Converter"></a>二、Converter</h1><ul>
-<li>1、Retrofit支持多种数据解析方式<br><img src="//YuY-QK.github.io/2019/09/29/sum-Retrofit-use/retrofit_4.png" alt="解析器"></li>
+<li>1、Retrofit支持多种数据解析方式</li>
 </ul>
-<p><strong>注：</strong>以上版本可能不是<a href="https://github.com/square/retrofit/tree/master/retrofit-converters" target="_blank" rel="noopener">最新版本</a></p>
+<p><img src="//YuY-QK.github.io/2019/09/29/sum-Retrofit-use/retrofit_4.png" alt="解析器"><br><strong>注：</strong>以上版本可能不是<a href="https://github.com/square/retrofit/tree/master/retrofit-converters" target="_blank" rel="noopener">最新版本</a></p>
 <ul>
 <li><p>2、说明：</p>
 <ul>
@@ -508,7 +509,11 @@ show_date_time();
 
 </li>
 </ul>
-<h1 id="四、相关链接："><a href="#四、相关链接：" class="headerlink" title="四、相关链接："></a>四、相关链接：</h1><p><a href="https://blog.csdn.net/carson_ho/article/details/73732076" target="_blank" rel="noopener">Retrofit 2.0 使用教程</a><br><a href="https://blog.csdn.net/qq_36699930/article/details/80564850" target="_blank" rel="noopener">Retrofit2详解</a><br><a href="https://www.jianshu.com/p/308f3c54abdd" target="_blank" rel="noopener">你真的会用Retrofit2吗?Retrofit2完全教程</a><br><a href="https://blog.csdn.net/chenkai19920410/article/details/51719425" target="_blank" rel="noopener">Retrofit2源码解析</a><br><a href="https://blog.csdn.net/chunqiuwei/article/details/82526077" target="_blank" rel="noopener">Retrofit之Converter简单解析</a></p>
+<h1 id="四、相关链接："><a href="#四、相关链接：" class="headerlink" title="四、相关链接："></a>四、相关链接：</h1><p><a href="https://blog.csdn.net/carson_ho/article/details/73732076" target="_blank" rel="noopener">Retrofit 2.0 使用教程</a></p>
+<p><a href="https://blog.csdn.net/qq_36699930/article/details/80564850" target="_blank" rel="noopener">Retrofit2详解</a></p>
+<p><a href="https://www.jianshu.com/p/308f3c54abdd" target="_blank" rel="noopener">你真的会用Retrofit2吗?Retrofit2完全教程</a></p>
+<p><a href="https://blog.csdn.net/chenkai19920410/article/details/51719425" target="_blank" rel="noopener">Retrofit2源码解析</a></p>
+<p><a href="https://blog.csdn.net/chunqiuwei/article/details/82526077" target="_blank" rel="noopener">Retrofit之Converter简单解析</a></p>
 
       
     </div>
@@ -674,7 +679,7 @@ show_date_time();
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#注意："><span class="nav-number">1.</span> <span class="nav-text">注意：</span></a></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#一、Retrofit注解"><span class="nav-number"></span> <span class="nav-text">一、Retrofit注解</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1、-HTTP"><span class="nav-number"></span> <span class="nav-text">1、@HTTP</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2、-Path"><span class="nav-number"></span> <span class="nav-text">2、@Path</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3、-Header-amp-Headers"><span class="nav-number"></span> <span class="nav-text">3、@Header &amp; @Headers</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4、-Body"><span class="nav-number"></span> <span class="nav-text">4、@Body</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5、-Field-amp-FieldMap；-Part-amp-PartMap"><span class="nav-number"></span> <span class="nav-text">5、@Field &amp; @FieldMap；@Part &amp; @PartMap</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6、-Query和-QueryMap"><span class="nav-number"></span> <span class="nav-text">6、@Query和@QueryMap</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二、Converter"><span class="nav-number"></span> <span class="nav-text">二、Converter</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三、CallAdapter"><span class="nav-number"></span> <span class="nav-text">三、CallAdapter</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#四、相关链接："><span class="nav-number"></span> <span class="nav-text">四、相关链接：</span></a></li></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一、Retrofit注解"><span class="nav-text">一、Retrofit注解</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1、-HTTP"><span class="nav-text">1、@HTTP</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2、-Path"><span class="nav-text">2、@Path</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3、-Header-amp-Headers"><span class="nav-text">3、@Header &amp; @Headers</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4、-Body"><span class="nav-text">4、@Body</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5、-Field-amp-FieldMap；-Part-amp-PartMap"><span class="nav-text">5、@Field &amp; @FieldMap；@Part &amp; @PartMap</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6、-Query和-QueryMap"><span class="nav-text">6、@Query和@QueryMap</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二、Converter"><span class="nav-text">二、Converter</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三、CallAdapter"><span class="nav-text">三、CallAdapter</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#四、相关链接："><span class="nav-text">四、相关链接：</span></a></li></ol></div>
             
 
           </div>
