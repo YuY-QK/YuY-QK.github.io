@@ -1,0 +1,1406 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="颜色值,UI,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="转自：https://blog.csdn.net/ezconn/article/details/90052114 颜色简介Android中的颜色值通常遵循RGB/ARGB标准，使用时通常以“#”字符开头，以16进制表示。 常用的颜色值格式为： 1234#RGB#ARGB#RRGGBB#AARRGGBB  其中，ARGB 依次代表透明度（alpha）、红色(red)、绿色(green)、蓝色(blu">
+<meta name="keywords" content="颜色值,UI">
+<meta property="og:type" content="article">
+<meta property="og:title" content="转&gt;颜色值透明度的百分数对应十六进制表">
+<meta property="og:url" content="https://YuY-QK.github.io/2019/10/13/转-颜色值透明度的百分数对应十六进制表/index.html">
+<meta property="og:site_name" content="YuBlog">
+<meta property="og:description" content="转自：https://blog.csdn.net/ezconn/article/details/90052114 颜色简介Android中的颜色值通常遵循RGB/ARGB标准，使用时通常以“#”字符开头，以16进制表示。 常用的颜色值格式为： 1234#RGB#ARGB#RRGGBB#AARRGGBB  其中，ARGB 依次代表透明度（alpha）、红色(red)、绿色(green)、蓝色(blu">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-10-13T02:49:52.978Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="转&gt;颜色值透明度的百分数对应十六进制表">
+<meta name="twitter:description" content="转自：https://blog.csdn.net/ezconn/article/details/90052114 颜色简介Android中的颜色值通常遵循RGB/ARGB标准，使用时通常以“#”字符开头，以16进制表示。 常用的颜色值格式为： 1234#RGB#ARGB#RRGGBB#AARRGGBB  其中，ARGB 依次代表透明度（alpha）、红色(red)、绿色(green)、蓝色(blu">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://YuY-QK.github.io/2019/10/13/转-颜色值透明度的百分数对应十六进制表/">
+
+
+
+
+
+  <title>转>颜色值透明度的百分数对应十六进制表 | YuBlog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta custom-logo">
+    
+    
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">YuBlog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">龙行天下，傲世乾坤</p>
+      
+
+      
+<div id="days" class="sidebar_record_days"></div>
+<script>
+function show_date_time(){
+    window.setTimeout("show_date_time()", 1000);
+    BirthDay=new Date("09/30/2019 13:33:33");
+    today=new Date();
+    timeold=(today.getTime()-BirthDay.getTime());
+    sectimeold=timeold/1000
+    secondsold=Math.floor(sectimeold);
+    msPerDay=24*60*60*1000
+    e_daysold=timeold/msPerDay
+    daysold=Math.floor(e_daysold);
+    e_hrsold=(e_daysold-daysold)*24;
+    hrsold=setzero(Math.floor(e_hrsold));
+    e_minsold=(e_hrsold-hrsold)*60;
+    minsold=setzero(Math.floor((e_hrsold-hrsold)*60));
+    seconds=setzero(Math.floor((e_minsold-minsold)*60));
+    document.getElementById('days').innerHTML= daysold + " 天 " + hrsold + " 小时 " + minsold + " 分 " + seconds + " 秒";
+}
+function setzero(i) {
+    if (i<10) {
+        i="0" + i
+    };
+    return i;
+}
+show_date_time();
+</script>
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://YuY-QK.github.io/2019/10/13/转-颜色值透明度的百分数对应十六进制表/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Yu">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="YuBlog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">转>颜色值透明度的百分数对应十六进制表</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-10-13T10:41:24+08:00">
+                2019-10-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/编程-软件/" itemprop="url" rel="index">
+                    <span itemprop="name">编程 - 软件</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><strong>转自：<a href="https://blog.csdn.net/ezconn/article/details/90052114" target="_blank" rel="noopener">https://blog.csdn.net/ezconn/article/details/90052114</a></strong></p>
+<h1 id="颜色简介"><a href="#颜色简介" class="headerlink" title="颜色简介"></a>颜色简介</h1><p>Android中的颜色值通常遵循RGB/ARGB标准，使用时通常以“#”字符开头，以16进制表示。</p>
+<p>常用的颜色值格式为：</p>
+<figure class="highlight vala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#RGB</span></span><br><span class="line"><span class="meta">#ARGB</span></span><br><span class="line"><span class="meta">#RRGGBB</span></span><br><span class="line"><span class="meta">#AARRGGBB</span></span><br></pre></td></tr></table></figure>
+
+<p>其中，ARGB 依次代表透明度（<code>alpha</code>）、红色(<code>red</code>)、绿色(<code>green</code>)、蓝色(<code>blue</code>)。以颜色值 <code>#FF66CC99</code> 为例，其中，<code>FF</code> 是透明度，<code>66</code> 是红色值， <code>CC</code> 是绿色值， <code>99</code> 是蓝色值。</p>
+<h1 id="1、透明度的计算"><a href="#1、透明度的计算" class="headerlink" title="1、透明度的计算"></a>1、透明度的计算</h1><ul>
+<li><p>a、透明度分为256个等级，即 0 - 256，0就是透明，255就是不透明，透明度 0（透明） –&gt; 255（不透明） 对应着16进制 00（透明） –&gt; FF（不透明），比如：50%透明度；50%也就是256的一半即128，因为是从0开始算的，所以是 127，转换成16进制就是 7F</p>
+</li>
+<li><p>b、透明度 和 不透明度 是两个概念， 它们加起来是1，或者100%.</p>
+</li>
+</ul>
+<p>c，ARGB 中的透明度alpha，表示的是不透明度。</p>
+<h1 id="2、透明度和不透明度的转换"><a href="#2、透明度和不透明度的转换" class="headerlink" title="2、透明度和不透明度的转换"></a>2、透明度和不透明度的转换</h1><p>需要不透明度值的，可以自己算：</p>
+<blockquote>
+<p>透明度值 + 不透明度值 = 100%</p>
+</blockquote>
+<p>如果UI给的视觉稿标注是：颜色#FFFFFF，透明度40% 。那你的计算方式应该是：</p>
+<ul>
+<li>a、将透明度转换成不透明度。不透明度为：<code>60%</code></li>
+<li>b、不透明度乘以<code>255</code>。 我们得到结果：<code>153</code></li>
+<li>c、将计算结果转换成16进制。得到最终的不透明度：<code>99</code></li>
+<li>d、将不透明度和颜色值拼接成ARGB格式。得到最终的颜色值： <code>#99FFFFFF</code><br>所以，UI要的颜色是：<code>#99FFFFFF</code></li>
+</ul>
+<h1 id="3、透明度对应的十六进制值"><a href="#3、透明度对应的十六进制值" class="headerlink" title="3、透明度对应的十六进制值"></a>3、透明度对应的十六进制值</h1><figure class="highlight processing"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//java代码生成的对应表</span></span><br><span class="line"><span class="keyword">for</span> (<span class="built_in">int</span> i = <span class="number">100</span>; i&gt;=<span class="number">0</span>; i--) &#123;</span><br><span class="line">   <span class="keyword">double</span> j = (i / <span class="number">100.0</span>d);</span><br><span class="line">   <span class="built_in">int</span> <span class="built_in">alpha</span> = (<span class="built_in">int</span>) Math.<span class="built_in">round</span>(<span class="number">255</span>-j * <span class="number">255</span>);</span><br><span class="line">   <span class="keyword">String</span> <span class="built_in">hex</span> = Integer.toHexString(<span class="built_in">alpha</span>).toUpperCase();</span><br><span class="line">   <span class="keyword">if</span> (<span class="built_in">hex</span>.length() == <span class="number">1</span>) <span class="built_in">hex</span> = <span class="string">"0"</span> + <span class="built_in">hex</span>;</span><br><span class="line">   <span class="built_in">int</span> percent = (<span class="built_in">int</span>) (j*<span class="number">100</span>);</span><br><span class="line">   System.out.<span class="built_in">println</span>(<span class="keyword">String</span>.format(<span class="string">"%d%% — %s"</span>, percent, <span class="built_in">hex</span>));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th>透明度</th>
+<th>16进制表示</th>
+<th>透明度</th>
+<th>16进制表示</th>
+<th>透明度</th>
+<th>16进制表示</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>100%</td>
+<td>00（全透明）</td>
+<td>66%</td>
+<td>57</td>
+<td>32%</td>
+<td>AD</td>
+</tr>
+<tr>
+<td>99%</td>
+<td>03</td>
+<td>65%</td>
+<td>59</td>
+<td>31%</td>
+<td>B0</td>
+</tr>
+<tr>
+<td>98%</td>
+<td>05</td>
+<td>64%</td>
+<td>5C</td>
+<td>30%</td>
+<td>B3</td>
+</tr>
+<tr>
+<td>97%</td>
+<td>07</td>
+<td>63%</td>
+<td>5E</td>
+<td>29%</td>
+<td>B5</td>
+</tr>
+<tr>
+<td>96%</td>
+<td>0A</td>
+<td>62%</td>
+<td>61</td>
+<td>28%</td>
+<td>B8</td>
+</tr>
+<tr>
+<td>95%</td>
+<td>0D</td>
+<td>61%</td>
+<td>63</td>
+<td>27%</td>
+<td>BA</td>
+</tr>
+<tr>
+<td>94%</td>
+<td>0F</td>
+<td>60%</td>
+<td>66</td>
+<td>26%</td>
+<td>BD</td>
+</tr>
+<tr>
+<td>93%</td>
+<td>12</td>
+<td>59%</td>
+<td>69</td>
+<td>25%</td>
+<td>BF</td>
+</tr>
+<tr>
+<td>92%</td>
+<td>14</td>
+<td>58%</td>
+<td>6B</td>
+<td>24%</td>
+<td>C2</td>
+</tr>
+<tr>
+<td>91%</td>
+<td>17</td>
+<td>57%</td>
+<td>6E</td>
+<td>23%</td>
+<td>C4</td>
+</tr>
+<tr>
+<td>90%</td>
+<td>1A</td>
+<td>56%</td>
+<td>70</td>
+<td>22%</td>
+<td>C7</td>
+</tr>
+<tr>
+<td>89%</td>
+<td>1C</td>
+<td>55%</td>
+<td>73</td>
+<td>21%</td>
+<td>C9</td>
+</tr>
+<tr>
+<td>88%</td>
+<td>1E</td>
+<td>54%</td>
+<td>75</td>
+<td>20%</td>
+<td>CC</td>
+</tr>
+<tr>
+<td>87%</td>
+<td>21</td>
+<td>53%</td>
+<td>78</td>
+<td>19%</td>
+<td>CF</td>
+</tr>
+<tr>
+<td>86%</td>
+<td>24</td>
+<td>52%</td>
+<td>7A</td>
+<td>18%</td>
+<td>D1</td>
+</tr>
+<tr>
+<td>85%</td>
+<td>26</td>
+<td>51%</td>
+<td>7D</td>
+<td>17%</td>
+<td>D4</td>
+</tr>
+<tr>
+<td>84%</td>
+<td>29</td>
+<td>50%</td>
+<td>80</td>
+<td>16%</td>
+<td>D6</td>
+</tr>
+<tr>
+<td>83%</td>
+<td>2B</td>
+<td>49%</td>
+<td>82</td>
+<td>15%</td>
+<td>D9</td>
+</tr>
+<tr>
+<td>82%</td>
+<td>2E</td>
+<td>48%</td>
+<td>85</td>
+<td>14%</td>
+<td>DB</td>
+</tr>
+<tr>
+<td>81%</td>
+<td>30</td>
+<td>47%</td>
+<td>87</td>
+<td>13%</td>
+<td>DE</td>
+</tr>
+<tr>
+<td>80%</td>
+<td>33</td>
+<td>46%</td>
+<td>8A</td>
+<td>12%</td>
+<td>E0</td>
+</tr>
+<tr>
+<td>79%</td>
+<td>36</td>
+<td>45%</td>
+<td>8C</td>
+<td>11%</td>
+<td>E3</td>
+</tr>
+<tr>
+<td>78%</td>
+<td>38</td>
+<td>44%</td>
+<td>8F</td>
+<td>10%</td>
+<td>E6</td>
+</tr>
+<tr>
+<td>77%</td>
+<td>3B</td>
+<td>43%</td>
+<td>91</td>
+<td>9%</td>
+<td>E8</td>
+</tr>
+<tr>
+<td>76%</td>
+<td>3D</td>
+<td>42%</td>
+<td>94</td>
+<td>8%</td>
+<td>EB</td>
+</tr>
+<tr>
+<td>75%</td>
+<td>40</td>
+<td>41%</td>
+<td>96</td>
+<td>7%</td>
+<td>ED</td>
+</tr>
+<tr>
+<td>74%</td>
+<td>42</td>
+<td>40%</td>
+<td>99</td>
+<td>6%</td>
+<td>F0</td>
+</tr>
+<tr>
+<td>73%</td>
+<td>45</td>
+<td>39%</td>
+<td>9C</td>
+<td>5%</td>
+<td>F2</td>
+</tr>
+<tr>
+<td>72%</td>
+<td>47</td>
+<td>38%</td>
+<td>9E</td>
+<td>4%</td>
+<td>F5</td>
+</tr>
+<tr>
+<td>71%</td>
+<td>4A</td>
+<td>37%</td>
+<td>A1</td>
+<td>3%</td>
+<td>F7</td>
+</tr>
+<tr>
+<td>70%</td>
+<td>4D</td>
+<td>36%</td>
+<td>A3</td>
+<td>2%</td>
+<td>FA</td>
+</tr>
+<tr>
+<td>69%</td>
+<td>4F</td>
+<td>35%</td>
+<td>A6</td>
+<td>1%</td>
+<td>FC</td>
+</tr>
+<tr>
+<td>68%</td>
+<td>52</td>
+<td>34%</td>
+<td>A8</td>
+<td>0%</td>
+<td>FF</td>
+</tr>
+<tr>
+<td>67%</td>
+<td>54</td>
+<td>33%</td>
+<td>AB</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h1 id="4、不透明度对应的十六进制值"><a href="#4、不透明度对应的十六进制值" class="headerlink" title="4、不透明度对应的十六进制值"></a>4、不透明度对应的十六进制值</h1><figure class="highlight processing"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">double</span> i = <span class="number">1</span>; i &gt;= <span class="number">0</span>; i -= <span class="number">0.01</span>) &#123;</span><br><span class="line">    i = Math.<span class="built_in">round</span>(i * <span class="number">100</span>) / <span class="number">100.0</span>d;</span><br><span class="line">    <span class="built_in">int</span> <span class="built_in">alpha</span> = (<span class="built_in">int</span>) Math.<span class="built_in">round</span>(i * <span class="number">255</span>);</span><br><span class="line">    <span class="keyword">String</span> <span class="built_in">hex</span> = Integer.toHexString(<span class="built_in">alpha</span>).toUpperCase();</span><br><span class="line">    <span class="keyword">if</span> (<span class="built_in">hex</span>.length() == <span class="number">1</span>) <span class="built_in">hex</span> = <span class="string">"0"</span> + <span class="built_in">hex</span>;</span><br><span class="line">    <span class="built_in">int</span> percent = (<span class="built_in">int</span>) (i * <span class="number">100</span>);</span><br><span class="line">    System.out.<span class="built_in">println</span>(<span class="keyword">String</span>.format(<span class="string">"%d%% — %s"</span>, percent, <span class="built_in">hex</span>));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>不透明度—十六进制值</p>
+<table>
+<thead>
+<tr>
+<th>不透明度</th>
+<th>16进制表示</th>
+<th>不透明度</th>
+<th>16进制表示</th>
+<th>不透明度</th>
+<th>16进制表示</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>100%</td>
+<td>FF（完全不透明）</td>
+<td>66%</td>
+<td>A8</td>
+<td>32%</td>
+<td>52</td>
+</tr>
+<tr>
+<td>99%</td>
+<td>FC</td>
+<td>65%</td>
+<td>A6</td>
+<td>31%</td>
+<td>4F</td>
+</tr>
+<tr>
+<td>98%</td>
+<td>FA</td>
+<td>64%</td>
+<td>A3</td>
+<td>30%</td>
+<td>4D</td>
+</tr>
+<tr>
+<td>97%</td>
+<td>F7</td>
+<td>63%</td>
+<td>A1</td>
+<td>29%</td>
+<td>4A</td>
+</tr>
+<tr>
+<td>96%</td>
+<td>F5</td>
+<td>62%</td>
+<td>9E</td>
+<td>28%</td>
+<td>47</td>
+</tr>
+<tr>
+<td>95%</td>
+<td>F2</td>
+<td>61%</td>
+<td>9C</td>
+<td>27%</td>
+<td>45</td>
+</tr>
+<tr>
+<td>94%</td>
+<td>F0</td>
+<td>60%</td>
+<td>99</td>
+<td>26%</td>
+<td>42</td>
+</tr>
+<tr>
+<td>93%</td>
+<td>ED</td>
+<td>59%</td>
+<td>96</td>
+<td>25%</td>
+<td>40</td>
+</tr>
+<tr>
+<td>92%</td>
+<td>EB</td>
+<td>58%</td>
+<td>94</td>
+<td>24%</td>
+<td>3D</td>
+</tr>
+<tr>
+<td>91%</td>
+<td>E8</td>
+<td>57%</td>
+<td>91</td>
+<td>23%</td>
+<td>3B</td>
+</tr>
+<tr>
+<td>90%</td>
+<td>E6</td>
+<td>56%</td>
+<td>8F</td>
+<td>22%</td>
+<td>38</td>
+</tr>
+<tr>
+<td>89%</td>
+<td>E3</td>
+<td>55%</td>
+<td>8C</td>
+<td>21%</td>
+<td>36</td>
+</tr>
+<tr>
+<td>88%</td>
+<td>E0</td>
+<td>54%</td>
+<td>8A</td>
+<td>20%</td>
+<td>33</td>
+</tr>
+<tr>
+<td>87%</td>
+<td>DE</td>
+<td>53%</td>
+<td>87</td>
+<td>19%</td>
+<td>30</td>
+</tr>
+<tr>
+<td>86%</td>
+<td>DB</td>
+<td>52%</td>
+<td>85</td>
+<td>18%</td>
+<td>2E</td>
+</tr>
+<tr>
+<td>85%</td>
+<td>D9</td>
+<td>51%</td>
+<td>82</td>
+<td>17%</td>
+<td>2B</td>
+</tr>
+<tr>
+<td>84%</td>
+<td>D6</td>
+<td>50%</td>
+<td>80</td>
+<td>16%</td>
+<td>29</td>
+</tr>
+<tr>
+<td>83%</td>
+<td>D4</td>
+<td>49%</td>
+<td>7D</td>
+<td>15%</td>
+<td>26</td>
+</tr>
+<tr>
+<td>82%</td>
+<td>D1</td>
+<td>48%</td>
+<td>7A</td>
+<td>14%</td>
+<td>24</td>
+</tr>
+<tr>
+<td>81%</td>
+<td>CF</td>
+<td>47%</td>
+<td>78</td>
+<td>13%</td>
+<td>21</td>
+</tr>
+<tr>
+<td>80%</td>
+<td>CC</td>
+<td>46%</td>
+<td>75</td>
+<td>12%</td>
+<td>1F</td>
+</tr>
+<tr>
+<td>79%</td>
+<td>C9</td>
+<td>45%</td>
+<td>73</td>
+<td>11%</td>
+<td>1C</td>
+</tr>
+<tr>
+<td>78%</td>
+<td>C7</td>
+<td>44%</td>
+<td>70</td>
+<td>10%</td>
+<td>1A</td>
+</tr>
+<tr>
+<td>77%</td>
+<td>C4</td>
+<td>43%</td>
+<td>6E</td>
+<td>9%</td>
+<td>17</td>
+</tr>
+<tr>
+<td>76%</td>
+<td>C2</td>
+<td>42%</td>
+<td>6B</td>
+<td>8%</td>
+<td>14</td>
+</tr>
+<tr>
+<td>75%</td>
+<td>BF</td>
+<td>41%</td>
+<td>69</td>
+<td>7%</td>
+<td>12</td>
+</tr>
+<tr>
+<td>74%</td>
+<td>BD</td>
+<td>40%</td>
+<td>66</td>
+<td>6%</td>
+<td>0F</td>
+</tr>
+<tr>
+<td>73%</td>
+<td>BA</td>
+<td>39%</td>
+<td>63</td>
+<td>5%</td>
+<td>0D</td>
+</tr>
+<tr>
+<td>72%</td>
+<td>B8</td>
+<td>38%</td>
+<td>61</td>
+<td>4%</td>
+<td>0A</td>
+</tr>
+<tr>
+<td>71%</td>
+<td>B5</td>
+<td>37%</td>
+<td>5E</td>
+<td>3%</td>
+<td>08</td>
+</tr>
+<tr>
+<td>70%</td>
+<td>B3</td>
+<td>36%</td>
+<td>5C</td>
+<td>2%</td>
+<td>05</td>
+</tr>
+<tr>
+<td>69%</td>
+<td>B0</td>
+<td>35%</td>
+<td>59</td>
+<td>1%</td>
+<td>03</td>
+</tr>
+<tr>
+<td>68%</td>
+<td>AD</td>
+<td>34%</td>
+<td>57</td>
+<td>0%</td>
+<td>00（全透明)</td>
+</tr>
+<tr>
+<td>67%</td>
+<td>AB</td>
+<td>33%</td>
+<td>54</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+
+      
+    </div>
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <div>
+      
+        <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------我是有底线的-------------</div>
+    
+</div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/颜色值/" rel="tag"># 颜色值</a>
+          
+            <a href="/tags/UI/" rel="tag"># UI</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/10/07/kotlin入门-2-类与对象2/" rel="next" title="kotlin入门>2-类与对象2">
+                <i class="fa fa-chevron-left"></i> kotlin入门>2-类与对象2
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar.png" alt="Yu">
+            
+              <p class="site-author-name" itemprop="name">Yu</p>
+              <p class="site-description motion-element" itemprop="description">记录点滴，提升自我</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#颜色简介"><span class="nav-text">颜色简介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#1、透明度的计算"><span class="nav-text">1、透明度的计算</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2、透明度和不透明度的转换"><span class="nav-text">2、透明度和不透明度的转换</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3、透明度对应的十六进制值"><span class="nav-text">3、透明度对应的十六进制值</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4、不透明度对应的十六进制值"><span class="nav-text">4、不透明度对应的十六进制值</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="heart">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Yu</span>
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
