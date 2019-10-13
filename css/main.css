@@ -1823,7 +1823,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #9d71ff;
+  background: #ff1aaf;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3398,6 +3398,30 @@ img.img-topic {
 }
 .posts-collapse::after {
   background: var(--style_deep);
+}
+table>tbody>tr:nth-of-type(odd) {
+  background-color: transparent;
+}
+table>tbody>tr:hover {
+  background-color: transparent;
+  color: var(--base_color);
+}
+.post-tags {
+  position: releate;
+}
+.post-tags a {
+  border: 1px solid var(--base_color);
+  padding: 0 10px;
+  border-radius: 5px;
+}
+.post-tags .post-tags-icon-pre {
+  margin-left: -30px;
+  margin-top: 3px;
+  text-align: center;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  background: url("/images/icon_label.png") no-repeat 100% 100% !important;
 }
 #heart {
   animation: heartAnimate 1.33s ease-in-out infinite;
