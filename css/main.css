@@ -1823,7 +1823,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ff1aaf;
+  background: #034e0e;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3406,22 +3406,19 @@ table>tbody>tr:hover {
   background-color: transparent;
   color: var(--base_color);
 }
-.post-tags {
-  position: releate;
-}
 .post-tags a {
-  border: 1px solid var(--base_color);
-  padding: 0 10px;
-  border-radius: 5px;
+  border: none;
 }
-.post-tags .post-tags-icon-pre {
-  margin-left: -30px;
-  margin-top: 3px;
-  text-align: center;
+.post-tags a:hover {
+  color: #fff;
+}
+.post-tags a::before {
+  content: "";
   width: 20px;
   height: 20px;
-  position: absolute;
-  background: url("/images/icon_label.png") no-repeat 100% 100% !important;
+  float: left;
+  margin: 3px 0 0 0;
+  background: url("/images/icon_label_ye.png") no-repeat 100% 100% !important;
 }
 #heart {
   animation: heartAnimate 1.33s ease-in-out infinite;

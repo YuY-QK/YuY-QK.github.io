@@ -1,0 +1,954 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="前端,总结,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="常见手机屏幕分辨率128x128、128x160、240x320（常见2.0、2.2、2.4、2.8寸屏手机使用）320x240（常见2.4寸屏手机使用）240x400（常见3.0寸屏手机使用）320x480（主流屏常见3.2、3.5寸屏手机）360x640（诺基亚常见）480x800（常见4.0寸屏使用）480x854（常见3.7寸屏使用）960x540（QHD常见4.0、4.3、4.5寸使用）">
+<meta name="keywords" content="前端,总结">
+<meta property="og:type" content="article">
+<meta property="og:title" content="常用分辨率[前端]">
+<meta property="og:url" content="https://YuY-QK.github.io/2019/10/13/常用分辨率-前端/index.html">
+<meta property="og:site_name" content="YuBlog">
+<meta property="og:description" content="常见手机屏幕分辨率128x128、128x160、240x320（常见2.0、2.2、2.4、2.8寸屏手机使用）320x240（常见2.4寸屏手机使用）240x400（常见3.0寸屏手机使用）320x480（主流屏常见3.2、3.5寸屏手机）360x640（诺基亚常见）480x800（常见4.0寸屏使用）480x854（常见3.7寸屏使用）960x540（QHD常见4.0、4.3、4.5寸使用）">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-10-13T14:01:40.837Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="常用分辨率[前端]">
+<meta name="twitter:description" content="常见手机屏幕分辨率128x128、128x160、240x320（常见2.0、2.2、2.4、2.8寸屏手机使用）320x240（常见2.4寸屏手机使用）240x400（常见3.0寸屏手机使用）320x480（主流屏常见3.2、3.5寸屏手机）360x640（诺基亚常见）480x800（常见4.0寸屏使用）480x854（常见3.7寸屏使用）960x540（QHD常见4.0、4.3、4.5寸使用）">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://YuY-QK.github.io/2019/10/13/常用分辨率-前端/">
+
+
+
+
+
+  <title>常用分辨率[前端] | YuBlog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta custom-logo">
+    
+    
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">YuBlog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">龙行天下，傲世乾坤</p>
+      
+
+      
+<div id="days" class="sidebar_record_days"></div>
+<script>
+function show_date_time(){
+    window.setTimeout("show_date_time()", 1000);
+    BirthDay=new Date("09/30/2019 13:33:33");
+    today=new Date();
+    timeold=(today.getTime()-BirthDay.getTime());
+    sectimeold=timeold/1000
+    secondsold=Math.floor(sectimeold);
+    msPerDay=24*60*60*1000
+    e_daysold=timeold/msPerDay
+    daysold=Math.floor(e_daysold);
+    e_hrsold=(e_daysold-daysold)*24;
+    hrsold=setzero(Math.floor(e_hrsold));
+    e_minsold=(e_hrsold-hrsold)*60;
+    minsold=setzero(Math.floor((e_hrsold-hrsold)*60));
+    seconds=setzero(Math.floor((e_minsold-minsold)*60));
+    document.getElementById('days').innerHTML= daysold + " 天 " + hrsold + " 小时 " + minsold + " 分 " + seconds + " 秒";
+}
+function setzero(i) {
+    if (i<10) {
+        i="0" + i
+    };
+    return i;
+}
+show_date_time();
+</script>
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://YuY-QK.github.io/2019/10/13/常用分辨率-前端/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Yu">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="YuBlog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">常用分辨率[前端]</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-10-13T21:57:12+08:00">
+                2019-10-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Html/" itemprop="url" rel="index">
+                    <span itemprop="name">Html</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Html/基础/" itemprop="url" rel="index">
+                    <span itemprop="name">基础</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="常见手机屏幕分辨率"><a href="#常见手机屏幕分辨率" class="headerlink" title="常见手机屏幕分辨率"></a>常见手机屏幕分辨率</h1><p>128x128、128x160、240x320（常见2.0、2.2、2.4、2.8寸屏手机使用）<br>320x240（常见2.4寸屏手机使用）<br>240x400（常见3.0寸屏手机使用）<br>320x480（主流屏常见3.2、3.5寸屏手机）<br>360x640（诺基亚常见）<br>480x800（常见4.0寸屏使用）<br>480x854（常见3.7寸屏使用）<br>960x540（QHD常见4.0、4.3、4.5寸使用）<br>960x640（常见苹果机使用）<br>1136x640（常见苹果5使用）<br>1280x720（HD主流屏常见4.3、4.5、4.7、5.0、5.5、5.7、6.0寸屏使用）<br>1280x768（常见4.5寸屏使用）<br>1280x800（常见三星5.3寸及平板电脑使用）<br>1024x600（常见7.0寸屏平板电脑使用）<br>1024x768（常见LG5.0寸屏及7.9寸9.7寸平板电脑使用）<br>1920x1080（FHD主流屏常见4.7、5.0、5.0、5.7、6.0寸手机及电视使用）<br>1920x1280 （常见9.0寸平板电脑使用）<br>1920x1200（常见10.1寸平板电脑及酷派大神7.0使用）<br>2048x1539（常见苹果iPad 及国产一些平板使用）<br>2560×1440（2k屏）<br>4096×2160（4K屏常见电视使用）</p>
+<h1 id="常见电脑屏幕分辨率"><a href="#常见电脑屏幕分辨率" class="headerlink" title="常见电脑屏幕分辨率"></a>常见电脑屏幕分辨率</h1><p>1024x600（常见8.9寸电脑使用）<br>1024x768（常见10.4、12.1、14.1、15寸电脑使用）4:3<br>1280x1024（常见14.1、15寸电脑使用）5:4<br>1440x1050（常见14.1、15寸电脑使用）4:3<br>1600x1200（常见15、16.1寸电脑使用）4:3<br>1280x800（常见10.8、12.1、15.4寸电脑使用）16:10<br>1366x768（常见15.2寸电脑使用）15:10<br>1280x854（不常见）16:9<br>1440x900（仅苹果17寸电脑使用）16:10<br>1600x1024（不常见）14:9<br>1680x1050（常见15.4、20寸电脑使用）16:10<br>1920x1200（常见20寸电脑使用）16:10</p>
+<h1 id="常用手机浏览器尺寸"><a href="#常用手机浏览器尺寸" class="headerlink" title="常用手机浏览器尺寸"></a>常用手机浏览器尺寸</h1><table>
+<thead>
+<tr>
+<th>手机型号</th>
+<th>手机尺寸</th>
+<th>屏幕大小(pt)</th>
+<th>屏幕分辨率（px）</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>iPhone4</td>
+<td>3.5英寸</td>
+<td>320x480</td>
+<td>640x960</td>
+</tr>
+<tr>
+<td>iPhone4s</td>
+<td>3.5英寸</td>
+<td>320x480</td>
+<td>640x960</td>
+</tr>
+<tr>
+<td>iPhone5</td>
+<td>4.0英寸</td>
+<td>320x568</td>
+<td>640x1136</td>
+</tr>
+<tr>
+<td>iPhone5s</td>
+<td>4.0英寸</td>
+<td>320x480</td>
+<td>640x1136</td>
+</tr>
+<tr>
+<td>iphone6</td>
+<td>4.7英寸</td>
+<td>375x667</td>
+<td>750x1334</td>
+</tr>
+<tr>
+<td>iphone6s</td>
+<td>4.7英寸</td>
+<td>375x667</td>
+<td>750x1334</td>
+</tr>
+<tr>
+<td>iphone6 plus</td>
+<td>5.5英寸</td>
+<td>417x736</td>
+<td>750x1334</td>
+</tr>
+<tr>
+<td>iphone6s plus</td>
+<td>5.5英寸</td>
+<td>417x736</td>
+<td>750x1334</td>
+</tr>
+<tr>
+<td>vivo x5</td>
+<td>5.0英寸</td>
+<td>360x640</td>
+<td>720x1280</td>
+</tr>
+<tr>
+<td>android</td>
+<td></td>
+<td>320x420</td>
+<td>240x320</td>
+</tr>
+<tr>
+<td>android</td>
+<td></td>
+<td>320x480</td>
+<td>320x480</td>
+</tr>
+<tr>
+<td>android</td>
+<td></td>
+<td>360x500</td>
+<td>480x800</td>
+</tr>
+<tr>
+<td>android</td>
+<td></td>
+<td>320x480</td>
+<td>640x960</td>
+</tr>
+<tr>
+<td>android</td>
+<td></td>
+<td>360x640</td>
+<td>540x960</td>
+</tr>
+<tr>
+<td>android</td>
+<td></td>
+<td>360x640</td>
+<td>720x1280</td>
+</tr>
+<tr>
+<td>android</td>
+<td></td>
+<td>360x640</td>
+<td>1080x1920</td>
+</tr>
+</tbody></table>
+<h1 id="移动端web页面开发说明："><a href="#移动端web页面开发说明：" class="headerlink" title="移动端web页面开发说明："></a>移动端web页面开发说明：</h1><h2 id="iPhone手机网页的设计尺寸"><a href="#iPhone手机网页的设计尺寸" class="headerlink" title="iPhone手机网页的设计尺寸"></a>iPhone手机网页的设计尺寸</h2><p>iPhone5尺寸是640x1136px分辨率是326PPI<br>iPhone4和iPhone4S尺寸是640x960px分辨率是326PPI<br>iPhone和iPodTouch第一代、第二代、第三代尺寸是320x480px分辨率是163PPI</p>
+<h2 id="安卓网页的设计尺寸"><a href="#安卓网页的设计尺寸" class="headerlink" title="安卓网页的设计尺寸"></a>安卓网页的设计尺寸</h2><p>320dp：一个普通的手机屏幕(240X320，320×480，480X800)<br>480dp：一个中间平板电脑像(480×800)<br>600dp：7寸平板电脑(600×1024)<br>720dp：10寸平板电脑(720×1280，800×1280)</p>
+<h2 id="ipad网页的设计尺寸"><a href="#ipad网页的设计尺寸" class="headerlink" title="ipad网页的设计尺寸"></a>ipad网页的设计尺寸</h2><p>iPad第三代第四代尺寸是2048x1536px分辨率是264PPI<br>iPad第一代第二代尺寸是1024x768px分辨率是132PPI<br>iPad Mini尺寸是1024x768px分辨率是163PPI</p>
+<h2 id="网站设计尺寸标准"><a href="#网站设计尺寸标准" class="headerlink" title="网站设计尺寸标准"></a>网站设计尺寸标准</h2><p>1、800x600下，网页宽度保持在778以内，就不会出现水平滚动条，高度则视版面和内容决定。</p>
+<p>2、1024x768下，网页宽度保持在1002以内，如果满框显示的话,高度是612-615之间.就不会出现水平滚动条和垂直滚动条。(在dw里面有设定好的标准值, 1024x768页面的标准大小是955x600,照着它的尺寸做就行了)</p>
+<p>3、在ps里面做网页可以在800x600状态下显示全屏，页面的下方又不会出现滑动条，尺寸为740x560左右</p>
+<p>4、在PS里做的图到了网上就不一样了，颜色等等方面，因为WEB上面只用到256WEB安全色，而PS中的RGB或者CMYK以及LAB或者HSB的色域很宽颜色范围很广，所以自然会有失色的现象.</p>
+<p>页面标准按800x600分辨率制作，实际尺寸为778x434px</p>
+<p>页面长度原则上不超过3屏，宽度不超过1屏</p>
+<p>每个标准页面为A4幅面大小，即8.5X11英寸</p>
+<p>全尺寸banner为468x60px，半尺寸banner为234x60px，小banner为88x31px</p>
+<p>另外120x90，120x60也是小图标的标准尺寸</p>
+<p>每个非首页静态页面含图片字节不超过60K，全尺寸banner不超过14K</p>
+<h2 id="网页广告标准尺寸规格"><a href="#网页广告标准尺寸规格" class="headerlink" title="网页广告标准尺寸规格"></a>网页广告标准尺寸规格</h2><p>1、120x120，这种广告规格适用于产品或新闻照片展示。</p>
+<p>2、120x60，这种广告规格主要用于做LOGO使用。</p>
+<p>3、120x90，主要应用于产品演示或大型LOGO。</p>
+<p>4、125x125，这种规格适于表现照片效果的图像广告。</p>
+<p>5、234x60，这种规格适用于框架或左右形式主页的广告链接。</p>
+<p>6、392x72，主要用于有较多图片展示的广告条，用于页眉或页脚。</p>
+<p>7、468x60，应用最为广泛的广告条尺寸，用于页眉或页脚。</p>
+<p>8、88x31，主要用于网页链接，或网站小型LO</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <div>
+      
+        <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------我是有底线的-------------</div>
+    
+</div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          <i class="post-tags-icon-pre"></i>
+          
+            <a href="/tags/前端/" rel="tag">前端</a>
+          
+            <a href="/tags/总结/" rel="tag">总结</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/10/13/关闭macOS的GoogleChrome黑暗模式风格/" rel="next" title="关闭macOS的GoogleChrome黑暗模式风格">
+                <i class="fa fa-chevron-left"></i> 关闭macOS的GoogleChrome黑暗模式风格
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/10/13/关于网站发布后通过网站域名-文件路径访问下载文件问题/" rel="prev" title="关于网站发布后通过网站域名+文件路径访问下载文件问题">
+                关于网站发布后通过网站域名+文件路径访问下载文件问题 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar.png" alt="Yu">
+            
+              <p class="site-author-name" itemprop="name">Yu</p>
+              <p class="site-description motion-element" itemprop="description">记录点滴，提升自我</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#常见手机屏幕分辨率"><span class="nav-text">常见手机屏幕分辨率</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#常见电脑屏幕分辨率"><span class="nav-text">常见电脑屏幕分辨率</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#常用手机浏览器尺寸"><span class="nav-text">常用手机浏览器尺寸</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#移动端web页面开发说明："><span class="nav-text">移动端web页面开发说明：</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#iPhone手机网页的设计尺寸"><span class="nav-text">iPhone手机网页的设计尺寸</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安卓网页的设计尺寸"><span class="nav-text">安卓网页的设计尺寸</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ipad网页的设计尺寸"><span class="nav-text">ipad网页的设计尺寸</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#网站设计尺寸标准"><span class="nav-text">网站设计尺寸标准</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#网页广告标准尺寸规格"><span class="nav-text">网页广告标准尺寸规格</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="heart">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Yu</span>
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
