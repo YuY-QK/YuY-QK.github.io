@@ -1823,7 +1823,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #034e0e;
+  background: #524670;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3337,6 +3337,39 @@ h6 {
     text-shadow: 0 0 4px var(--strong_color);
   }
 }
+.counter_wrap {
+  margin: 20px 0 0 0;
+}
+.counter_wrap .counter_content {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.counter_wrap .counter_content .busuanzi_content {
+  display: flex !important;
+  justify-content: center;
+  align-item: center;
+  color: var(--base_color) !important;
+}
+.counter_wrap .counter_content .busuanzi_content .busuanzi_value_site_content {
+  margin: 0 5px;
+}
+.counter_wrap .icon_conter_look_time {
+  width: 16px;
+  height: 16px;
+  background: url("/images/icon_look_time.png") no-repeat center center;
+  float: left;
+  margin: 5px;
+}
+.counter_wrap .icon_conter_look_people {
+  width: 16px;
+  height: 16px;
+  background: url("/images/icon_look_time.png") no-repeat 100% 100%;
+  display: inner-block;
+  float: left;
+  margin: 5px;
+}
 .menu .menu-item .fa {
   color: var(--base_color);
 }
@@ -3429,6 +3462,13 @@ table>tbody>tr:hover {
 .copyright {
   color: var(--base_color);
   font-size: 15px;
+}
+.pagination {
+  background: none !important;
+}
+.pagination .page-number,
+.next {
+  border-top: none !important;
 }
 @-moz-keyframes blog_title {
   0% {
