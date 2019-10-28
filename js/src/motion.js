@@ -208,6 +208,7 @@ $(document).ready(function () {
       var $brand = $('.brand');
       var $title = $('.site-title');
       var $subtitle = $('.site-subtitle');
+      var $recordDays = $('.site-recordday');
       var $logoLineTop = $('.logo-line-before i');
       var $logoLineBottom = $('.logo-line-after i');
 
@@ -231,6 +232,12 @@ $(document).ready(function () {
 
       hasElement($subtitle) && sequence.push({
         e: $subtitle,
+        p: {opacity: 1, top: 0},
+        o: {duration: 200}
+      });
+
+      hasElement($recordDays) && sequence.push({
+        e: $recordDays,
         p: {opacity: 1, top: 0},
         o: {duration: 200}
       });
